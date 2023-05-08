@@ -19,7 +19,6 @@ const recipeContainer = document.querySelector('.recipe');
 //page will update changes without reloading
 
 const controlRecipes = async function () {
-  console.log('bug');
   try {
     const id = window.location.hash.slice(1);
     if (!id) return;
@@ -97,7 +96,6 @@ const controlAddRecipe = async function (newRecipe) {
     addRecipeView.renderError(error.message);
   }
 };
-console.log('testing netlify');
 const init = function () {
   bookmarkView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
