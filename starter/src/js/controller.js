@@ -97,7 +97,7 @@ const controlAddRecipe = async function (newRecipe) {
     addRecipeView.renderError(error.message);
   }
 };
-
+console.log('testing netlify');
 const init = function () {
   bookmarkView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
