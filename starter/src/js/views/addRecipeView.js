@@ -22,16 +22,15 @@ class AddRecipeView extends View {
     // To render the upload window after the display of success or error messages
     // timeout is to solve the bug of the window displaying the rendered markup
     // for a fraction of a second as you close it, until a better method is found.
-    setTimeout(_ => {
-      const windowClass = this._parentElement.firstElementChild.classList[0];
-      if (windowClass === 'error' || windowClass === 'message') {
+    const windowClass = this._parentElement.firstElementChild.classList[0];
+    if (windowClass === 'error' || windowClass === 'message')
+      setTimeout(_ => {
         this._clear();
         this._parentElement.insertAdjacentHTML(
           'afterbegin',
           this._generateMarkup()
         );
-      }
-    }, 500);
+      }, 500);
   }
 
   _addHandlerShowWindow = function () {
