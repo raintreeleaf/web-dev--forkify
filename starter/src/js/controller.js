@@ -40,8 +40,8 @@ const controlSearchResults = async function () {
     resultView.renderSpinner();
     console.log(resultView);
     const query = searchView.getQuery();
-    if (!query) return;
-    await model.loadSearchResult(query);
+    if (!query) await model.loadSearchResult('chicken');
+    else await model.loadSearchResult(query);
     // resultView.render(model.state.search.results);
     resultView.render(model.getSearchResultsPage());
     paginationView.render(model.state.search);
